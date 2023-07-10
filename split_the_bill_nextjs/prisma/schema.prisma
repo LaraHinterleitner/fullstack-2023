@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model groups {
+  groupId      Int            @id @default(autoincrement())
+  groupname    String
+  transactions transactions[]
+  userInGroup  userInGroup[]
+
+  @@index([groupname], map: "groupname_index")
+}
+
+model transactions {
+  transactionId   Int               @id @default(autoincrement())
+  groupId         Int
+  total           Float
+  payedBy         Int
+  comment         String?
+  createdAt       DateTime          
+  title           String
+  groups          groups            @relation(fields: [groupId], references: [groupId], onDelete: Cascade, map: "FkeyGroupToTransaction\t")
+  users           users             @relation(fields: [payedBy], references: [userId], onDelete: Cascade, map: "FkeyPayerToTransaction")
+  userTransaction userTransaction[]
+
+  @@index([createdAt], map: "transactions_date_index")
+  @@index([groupId], map: "transactions_group_index")
+  @@index([payedBy], map: "transactions_payer_index")
+}
+
+model userInGroup {
+  userInGroupId Int    @id @default(autoincrement())
+  userId        Int
+  groupId       Int
+  groups        groups @relation(fields: [groupId], references: [groupId], onDelete: Cascade, map: "FkeyGroupToUser")
+  users         users  @relation(fields: [userId], references: [userId], onDelete: Cascade, map: "FkeyUserToGroup\t")
+
+  @@index([groupId], map: "userInGroupGroup")
+  @@index([userId], map: "userInGroupUser")
+}
+
+model userTransaction {
+  userTransactionId Int          @id @default(autoincrement())
+  userId            Int
+  transactionId     Int
+  amount            Float
+  transactions      transactions @relation(fields: [transactionId], references: [transactionId], onDelete: Cascade, map: "FkeyTransactionToUser")
+  users             users        @relation(fields: [userId], references: [userId], onDelete: Cascade, map: "FkeyUsertToTransaction")
+
+  @@index([transactionId], map: "usertransaction_transactionindex")
+  @@index([userId], map: "usertransaction_userindex")
+}
+
+model users {
+  userId          Int               @id @default(autoincrement())
+  username        String            @unique
+  password        String
+  email           String
+  paypal          Boolean           @default(false)
+  transactions    transactions[]
+  userInGroup     userInGroup[]
+  userTransaction userTransaction[]
+}

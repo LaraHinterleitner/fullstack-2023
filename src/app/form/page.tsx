@@ -3,10 +3,14 @@ import styles from '../page.module.css'
 import FormTemplate from './FormTemplate.server'
 import Form from './Form'
 import dotenv from 'dotenv'
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, users } from '@prisma/client'
 
 const prisma = new PrismaClient()
 dotenv.config()
+
+interface HomeProps {
+  users: users[]
+}
 
 const Home: React.FC<HomeProps> = async (props) => {
   const users = await prisma.users.findMany()

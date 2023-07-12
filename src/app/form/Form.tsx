@@ -10,7 +10,7 @@ const prisma = new PrismaClient()
 
 export default function Form ({users}:FormProps) {
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async () => {
         try {
             const transaction = await prisma.transactions.create({
         // Test Daten, weil wir wissen wollten, ob es in der DB gespeichert wird.
@@ -21,7 +21,7 @@ export default function Form ({users}:FormProps) {
                 groupId: 1,
                 total: 10,
                 payedBy: 2,
-                createdAt: new Date().getTime()
+                createdAt: 12
             }
         })
             console.log('Created transaction:', transaction)
@@ -29,7 +29,7 @@ export default function Form ({users}:FormProps) {
             console.error(error)
         }
     }
-   
+
     return (
         <form>
             <ul className={`${styles.tworowlist} ${styles.flexlistparent}`}>

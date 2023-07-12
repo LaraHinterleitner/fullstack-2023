@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import SignInStatus from './login'
+// import SignInStatus from './login'
 import { useSession, signIn, signOut } from 'next-auth/react'
 
 export default function Home() {
@@ -116,5 +116,4 @@ export default function Home() {
     //     </a>
     //   </div>
     // </main>
-  )
 }

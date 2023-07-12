@@ -11,13 +11,13 @@ export default function Home() {
       // <>
       //   <SignInStatus />
       // </>
-      
-      <p>Signed in as <b>{session.user?.name}</b></p>
-    )
-
-    <button onClick={() => signOut()}>
+      <>
+        <p>Signed in as <b>{session.user?.name}</b></p>
+        <button onClick={() => signOut()}>
           Sign out
         </button>
+      </>
+    )
   } else {
     return (
       <div>

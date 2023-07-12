@@ -21,7 +21,7 @@ export default function Form ({users}:FormProps) {
                 groupId: 1,
                 total: 10,
                 payedBy: 2,
-                createdAt: 12
+                createdAt: '12'
             }
         })
             console.log('Created transaction:', transaction)

@@ -21,7 +21,7 @@ export default function Form ({users}:FormProps) {
                 groupId: 1,
                 total: 10,
                 payedBy: 2,
-                createdAt: '12'
+                createdAt: new Date().getTime().toString()
             }
         })
             console.log('Created transaction:', transaction)
@@ -29,7 +29,7 @@ export default function Form ({users}:FormProps) {
             console.error(error)
         }
     }
-
+   
     return (
         <form>
             <ul className={`${styles.tworowlist} ${styles.flexlistparent}`}>
@@ -70,7 +70,7 @@ export default function Form ({users}:FormProps) {
                 <span>
                     <input type="checkbox" name="check_1"
                         id="check_1" 
-                        checked={true}
+                        defaultChecked={true}
                         // onclick="toggleUser(1)"
                         />
                     <label htmlFor="check_1">Lara: </label>
@@ -95,7 +95,7 @@ export default function Form ({users}:FormProps) {
                 <span>
                     <input type="checkbox" name="check_2"
                         id="check_2" 
-                        checked={true}
+                        defaultChecked={true}
                         // onclick="toggleUser(1)"
                         />
                     <label htmlFor="check_2">Mati: </label>

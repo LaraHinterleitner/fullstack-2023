@@ -131,7 +131,7 @@ export default function Form ({users}:FormProps) {
                 value="Add"
                 name="create"
                 className={styles.button}
-                onClick={handleSubmit()}
+                // onClick={handleSubmit()}
             />
             </p>
         </form>

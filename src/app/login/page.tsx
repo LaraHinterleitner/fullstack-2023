@@ -1,32 +1,32 @@
 'use client'
 
 import { useState } from 'react'
-import { signIn } from 'next-auth'
+// import { signIn } from 'next-auth'
 
 export default function LoginPage() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
 
-    const result = await signIn('credentials', {
-      username,
-      password,
-      redirect: false,
-    })
+  //   const result = await signIn('credentials', {
+  //     username,
+  //     password,
+  //     redirect: false,
+  //   })
 
-    if (result.error) {
-      console.error(result.error)
-    } else {
-      window.location.href = '/'
-    }
-  }
+  //   if (result.error) {
+  //     console.error(result.error)
+  //   } else {
+  //     window.location.href = '/'
+  //   }
+  // }
 
   return (
     <div>
       <h1>Login Page</h1>
-      <form onSubmit={handleLogin}>
+      <form>
         <div>
           <label htmlFor="username">Username</label>
           <input

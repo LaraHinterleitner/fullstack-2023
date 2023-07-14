@@ -1,0 +1,193 @@
+nav {
+    background-color: rgb(15, 15, 15);
+    padding: 1rem;
+}
+
+nav ul {
+    margin: 0 2rem 0 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+li p {
+    font-size: 1.2rem;
+}
+
+.navBtn {
+    display: flex;
+    flex-direction: row;
+    gap: 7vw;
+    font-size: 100%;
+}
+
+.navLink:hover {
+    cursor: pointer;
+    text-decoration: underline;
+} 
+
+main {
+    background-color: white;
+    min-height: 85vh;
+}
+
+main h1, main h2, main p, main div {
+    color: black;
+}
+
+.transactionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.container, .container ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    gap: 1.2rem;
+}
+
+.container ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftFlex {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.leftFlex a {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.button {
+    background-color: #7D3C98;
+    border-radius: 10px;
+    border-width: 0;
+    color: #F2F4F4;
+    cursor: pointer;
+    font-size: 100%;
+    width: 8rem;
+    height: 2.2rem;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: #633079;
+}
+
+footer {
+    background-color: rgb(15, 15, 15);
+    min-height: 8vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+    font-size: .8em;
+}
+
+.mainOverview{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.overview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 4rem 0 3rem 0;
+}
+
+.negative {
+    color: darkred;
+}
+
+.positive {
+    color: green;
+}
+
+.PageNav {
+    color: black;
+}
+
+form {
+    margin-top: 4rem;
+    width: 40vw;
+}
+
+form ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+form ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+select option {
+    font-size: 1.2em;
+}
+
+.inputF, textarea {
+    width: 15rem;
+}
+
+.numberF {
+    width: 7rem;
+}
+
+.mainForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.show h1 {
+    margin-top: 4rem;
+}
+
+.show div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 40vw;
+}
+
+.show div li {
+    list-style: none;
+}
+
+.t-hr {
+    border: none;
+    height: .2rem;
+    background: black;
+}

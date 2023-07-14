@@ -4,9 +4,15 @@ import Nav from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { PrismaClient } from '@prisma/client'
 
+interface PageProps {
+    params: {
+        id: number
+    }
+}
+
 const prisma = new PrismaClient()
 
-export default async function Page({ params }) {
+export default async function Page({ params }: PageProps){
     const userTransactions = await prisma.userTransaction.findMany({
         where: {
             transactionId: Number(params.id)
